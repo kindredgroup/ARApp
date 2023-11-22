@@ -26,8 +26,8 @@
 		271C9B082B0A8ECF00D025B1 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		27D074602B0B7EA10078F518 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		27E003222B0DEEEE0015172F /* SelectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedObject.swift; sourceTree = "<group>"; };
-		27E003242B0DEF230015172F /* Bowling_Pin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Bowling_Pin.usdz; path = ARApp/Bowling_Pin.usdz; sourceTree = "<group>"; };
-		27E003252B0DEF230015172F /* fruitmachine.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = fruitmachine.usdz; path = ARApp/fruitmachine.usdz; sourceTree = "<group>"; };
+		27E003242B0DEF230015172F /* Bowling_Pin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Bowling_Pin.usdz; sourceTree = "<group>"; };
+		27E003252B0DEF230015172F /* fruitmachine.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fruitmachine.usdz; sourceTree = "<group>"; };
 		27E003282B0DF73B0015172F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AC6A7212286785E80024C937 /* ARApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6A7215286785E80024C937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,12 +48,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27E0032A2B0DF82B0015172F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				27E003242B0DEF230015172F /* Bowling_Pin.usdz */,
+				27E003252B0DEF230015172F /* fruitmachine.usdz */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		AC6A7209286785E80024C937 = {
 			isa = PBXGroup;
 			children = (
 				27E003282B0DF73B0015172F /* README.md */,
-				27E003242B0DEF230015172F /* Bowling_Pin.usdz */,
-				27E003252B0DEF230015172F /* fruitmachine.usdz */,
 				AC6A7214286785E80024C937 /* ARApp */,
 				AC6A7213286785E80024C937 /* Products */,
 			);
@@ -70,6 +77,7 @@
 		AC6A7214286785E80024C937 /* ARApp */ = {
 			isa = PBXGroup;
 			children = (
+				27E0032A2B0DF82B0015172F /* Assets */,
 				AC6A7215286785E80024C937 /* AppDelegate.swift */,
 				27D074602B0B7EA10078F518 /* Coordinator.swift */,
 				AC6A7217286785E80024C937 /* ContentView.swift */,
