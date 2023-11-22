@@ -10,6 +10,7 @@
 		271C9B072B0A8B7800D025B1 /* JsonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C9B062B0A8B7800D025B1 /* JsonApi.swift */; };
 		271C9B092B0A8ECF00D025B1 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C9B082B0A8ECF00D025B1 /* Objects.swift */; };
 		278AB97C2B0E34360067F186 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 278AB97B2B0E34360067F186 /* Experience.rcproject */; };
+		278AB97E2B0E693B0067F186 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 278AB97D2B0E693B0067F186 /* data.json */; };
 		27D074612B0B7EA10078F518 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D074602B0B7EA10078F518 /* Coordinator.swift */; };
 		27E003232B0DEEEE0015172F /* SelectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E003222B0DEEEE0015172F /* SelectedObject.swift */; };
 		27E003262B0DEF230015172F /* Bowling_Pin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27E003242B0DEF230015172F /* Bowling_Pin.usdz */; };
@@ -26,6 +27,7 @@
 		271C9B062B0A8B7800D025B1 /* JsonApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonApi.swift; sourceTree = "<group>"; };
 		271C9B082B0A8ECF00D025B1 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		278AB97B2B0E34360067F186 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
+		278AB97D2B0E693B0067F186 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		27D074602B0B7EA10078F518 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		27E003222B0DEEEE0015172F /* SelectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedObject.swift; sourceTree = "<group>"; };
 		27E003242B0DEF230015172F /* Bowling_Pin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Bowling_Pin.usdz; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		AC6A7209286785E80024C937 = {
 			isa = PBXGroup;
 			children = (
+				278AB97D2B0E693B0067F186 /* data.json */,
 				27E003282B0DF73B0015172F /* README.md */,
 				AC6A7214286785E80024C937 /* ARApp */,
 				AC6A7213286785E80024C937 /* Products */,
@@ -171,6 +174,7 @@
 				27E003272B0DEF230015172F /* fruitmachine.usdz in Resources */,
 				AC6A721C286785EB0024C937 /* Assets.xcassets in Resources */,
 				27E003292B0DF73B0015172F /* README.md in Resources */,
+				278AB97E2B0E693B0067F186 /* data.json in Resources */,
 				27E003262B0DEF230015172F /* Bowling_Pin.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

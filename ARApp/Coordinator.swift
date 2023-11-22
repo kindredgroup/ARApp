@@ -45,10 +45,10 @@ class Coordinator: NSObject {
         let cameraTranslation = view.cameraTransform.translation
         let cameraRotation = view.cameraTransform.rotation
         
-        let mesh = MeshResource.generateSphere(radius: 0.025)
-        let material = SimpleMaterial(color: .init(red: 0.8, green: 0, blue: 0, alpha: 1), isMetallic: true)
+        let mesh = MeshResource.generateSphere(radius: 0.1)
+        let material = SimpleMaterial(color: .init(red: 0.2, green: 0.2, blue: 0.2, alpha: 1), isMetallic: true)
         let sphere = ModelEntity(mesh: mesh, materials: [material])
-        let shape = ShapeResource.generateSphere(radius: 0.025)
+        let shape = ShapeResource.generateSphere(radius: 0.1)
         sphere.collision = CollisionComponent(shapes: [shape])
         let spherePhysicsMaterial = PhysicsMaterialResource.generate(friction: 0.055, restitution: 0.85)
         let kinematics: PhysicsBodyComponent = .init(massProperties: .default, material: spherePhysicsMaterial, mode: .dynamic)
@@ -71,9 +71,10 @@ class Coordinator: NSObject {
         
         // Load the "Box" scene from the "Experience" Reality File
         if let b = try? Experience.loadBox() {
+            b.name = "box"
             view.scene.anchors.append(b)
         }
-
+        /*
         if let e = try? Entity.loadModel(named: "Bowling_Pin") {
             let size = e.visualBounds(relativeTo: e).extents
             let boxShape = ShapeResource.generateBox(size: size)
@@ -86,6 +87,7 @@ class Coordinator: NSObject {
             view.scene.addAnchor(anchorEntity)
             print("Added pin")
         }
+        */
     }
     
     @MainActor @objc
