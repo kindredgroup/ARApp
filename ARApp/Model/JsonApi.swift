@@ -8,6 +8,8 @@ class JsonApi {
             let objects = try! JSONDecoder().decode([Objects].self, from: data!)
             DispatchQueue.main.async {
                 completion(objects)
+                print("Received Data")
+                print(objects)
             }
         }
         .resume()
