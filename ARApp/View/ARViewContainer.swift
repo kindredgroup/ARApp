@@ -5,7 +5,7 @@ import Combine
 struct ARViewContainer: UIViewRepresentable {
     
     @ObservedObject var selectedObject: SelectedObject
-    @State var comments = [Comments]()
+    @State var objects = [Objects]()
     var a: ARView = ARView(frame: .zero)
     let tableAnchor = AnchorEntity(.plane(.horizontal, classification: .table, minimumBounds: [0.5, 0.5]))
     let floorAnchor = AnchorEntity(.plane(.horizontal, classification: .floor, minimumBounds: [0.5, 0.5]))
@@ -35,8 +35,9 @@ struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         // Load some json data
-        JsonApi().getUserComments { (comments) in
-            self.comments = comments
+        JsonApi().getObjects { (objects) in
+            self.objects = objects
+            print(objects)
         }
         //a.debugOptions = [.showAnchorOrigins, .showPhysics]
         createView(uiView:a)
@@ -63,18 +64,13 @@ struct ARViewContainer: UIViewRepresentable {
                 entity.removeFromParent()
             }
         }
-
+        
         var x = Float()
         var z = Float()
-        repeat {
-            x += 0.5
-            createPin(x:x,z:z)
-            repeat {
-                z += 0.5
-                createPin(x:x,z:z)
-            } while z <= 2
-            z = 0
-        } while x <= 2
+
+        objects.forEach { c in
+            createPin(x:c.x,z:c.z)
+        }
     }
     
     func createPin(x:Float, z:Float){
