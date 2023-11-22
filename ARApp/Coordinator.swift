@@ -64,10 +64,15 @@ class Coordinator: NSObject {
         print("Added sphere")
     }
     
-    func dropItem(){
+    @MainActor func dropItem(){
         guard let view = self.view else { return }
         let anchorEntity = AnchorEntity(world: [0,0,0])
         let cameraTranslation = view.cameraTransform.translation
+        
+        // Load the "Box" scene from the "Experience" Reality File
+        if let b = try? Experience.loadBox() {
+            view.scene.anchors.append(b)
+        }
 
         if let e = try? Entity.loadModel(named: "Bowling_Pin") {
             let size = e.visualBounds(relativeTo: e).extents
@@ -83,7 +88,7 @@ class Coordinator: NSObject {
         }
     }
     
-    @objc
+    @MainActor @objc
     func handleTap(_ recognizer: UITapGestureRecognizer? = nil) {
         
         if (selectedObject == "bullet") {
