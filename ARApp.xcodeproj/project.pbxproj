@@ -13,6 +13,7 @@
 		27E003232B0DEEEE0015172F /* SelectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E003222B0DEEEE0015172F /* SelectedObject.swift */; };
 		27E003262B0DEF230015172F /* Bowling_Pin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27E003242B0DEF230015172F /* Bowling_Pin.usdz */; };
 		27E003272B0DEF230015172F /* fruitmachine.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27E003252B0DEF230015172F /* fruitmachine.usdz */; };
+		27E003292B0DF73B0015172F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 27E003282B0DF73B0015172F /* README.md */; };
 		AC6A7216286785E80024C937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A7215286785E80024C937 /* AppDelegate.swift */; };
 		AC6A7218286785E80024C937 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A7217286785E80024C937 /* ContentView.swift */; };
 		AC6A721C286785EB0024C937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC6A721B286785EB0024C937 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		27E003222B0DEEEE0015172F /* SelectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedObject.swift; sourceTree = "<group>"; };
 		27E003242B0DEF230015172F /* Bowling_Pin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Bowling_Pin.usdz; path = ARApp/Bowling_Pin.usdz; sourceTree = "<group>"; };
 		27E003252B0DEF230015172F /* fruitmachine.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = fruitmachine.usdz; path = ARApp/fruitmachine.usdz; sourceTree = "<group>"; };
+		27E003282B0DF73B0015172F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AC6A7212286785E80024C937 /* ARApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6A7215286785E80024C937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC6A7217286785E80024C937 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 		AC6A7209286785E80024C937 = {
 			isa = PBXGroup;
 			children = (
+				27E003282B0DF73B0015172F /* README.md */,
 				27E003242B0DEF230015172F /* Bowling_Pin.usdz */,
 				27E003252B0DEF230015172F /* fruitmachine.usdz */,
 				AC6A7214286785E80024C937 /* ARApp */,
@@ -156,6 +159,7 @@
 			files = (
 				27E003272B0DEF230015172F /* fruitmachine.usdz in Resources */,
 				AC6A721C286785EB0024C937 /* Assets.xcassets in Resources */,
+				27E003292B0DF73B0015172F /* README.md in Resources */,
 				27E003262B0DEF230015172F /* Bowling_Pin.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
