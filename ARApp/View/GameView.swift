@@ -8,9 +8,9 @@
 import SwiftUI
 import RealityKit
 
-struct ContentView : View {
+
+struct GameView: View {
     var selectedObject = SelectedObject()
-    
     var body: some View {
         ZStack() {
             ARViewContainer(selectedObject: selectedObject)
@@ -22,11 +22,3 @@ struct ContentView : View {
         .edgesIgnoringSafeArea(.all)
     }
 }
-
-#if DEBUG
-struct ContentView_Previews : PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-#endif

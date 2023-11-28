@@ -47,9 +47,8 @@ class Coordinator: NSObject {
         
         let mesh = MeshResource.generateSphere(radius: 0.1)
         let material = SimpleMaterial(color: .init(red: 0.2, green: 0.2, blue: 0.2, alpha: 1), isMetallic: true)
-        let sphere = ModelEntity(mesh: mesh, materials: [material])
         let shape = ShapeResource.generateSphere(radius: 0.1)
-        sphere.collision = CollisionComponent(shapes: [shape])
+        let sphere = ModelEntity(mesh: mesh, materials: [material], collisionShape:shape, mass: 0.5)
         let spherePhysicsMaterial = PhysicsMaterialResource.generate(friction: 0.055, restitution: 0.85)
         let kinematics: PhysicsBodyComponent = .init(massProperties: .default, material: spherePhysicsMaterial, mode: .dynamic)
         sphere.components.set(kinematics)

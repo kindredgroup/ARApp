@@ -11,13 +11,14 @@
 		271C9B092B0A8ECF00D025B1 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C9B082B0A8ECF00D025B1 /* Objects.swift */; };
 		278AB97C2B0E34360067F186 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 278AB97B2B0E34360067F186 /* Experience.rcproject */; };
 		278AB97E2B0E693B0067F186 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 278AB97D2B0E693B0067F186 /* data.json */; };
+		278AB9802B0E6F730067F186 /* Pin.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 278AB97F2B0E6F730067F186 /* Pin.rcproject */; };
 		27D074612B0B7EA10078F518 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D074602B0B7EA10078F518 /* Coordinator.swift */; };
 		27E003232B0DEEEE0015172F /* SelectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E003222B0DEEEE0015172F /* SelectedObject.swift */; };
 		27E003262B0DEF230015172F /* Bowling_Pin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27E003242B0DEF230015172F /* Bowling_Pin.usdz */; };
 		27E003272B0DEF230015172F /* fruitmachine.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27E003252B0DEF230015172F /* fruitmachine.usdz */; };
 		27E003292B0DF73B0015172F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 27E003282B0DF73B0015172F /* README.md */; };
 		AC6A7216286785E80024C937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A7215286785E80024C937 /* AppDelegate.swift */; };
-		AC6A7218286785E80024C937 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A7217286785E80024C937 /* ContentView.swift */; };
+		AC6A7218286785E80024C937 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A7217286785E80024C937 /* GameView.swift */; };
 		AC6A721C286785EB0024C937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC6A721B286785EB0024C937 /* Assets.xcassets */; };
 		AC6A722C28678C220024C937 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A722B28678C220024C937 /* ARViewContainer.swift */; };
 		AC6A722E28678C380024C937 /* CounterButtonBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A722D28678C380024C937 /* CounterButtonBarView.swift */; };
@@ -28,6 +29,7 @@
 		271C9B082B0A8ECF00D025B1 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		278AB97B2B0E34360067F186 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		278AB97D2B0E693B0067F186 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		278AB97F2B0E6F730067F186 /* Pin.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Pin.rcproject; sourceTree = "<group>"; };
 		27D074602B0B7EA10078F518 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		27E003222B0DEEEE0015172F /* SelectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedObject.swift; sourceTree = "<group>"; };
 		27E003242B0DEF230015172F /* Bowling_Pin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Bowling_Pin.usdz; sourceTree = "<group>"; };
@@ -35,7 +37,7 @@
 		27E003282B0DF73B0015172F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AC6A7212286785E80024C937 /* ARApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6A7215286785E80024C937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC6A7217286785E80024C937 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC6A7217286785E80024C937 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AC6A721B286785EB0024C937 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC6A722B28678C220024C937 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		AC6A722D28678C380024C937 /* CounterButtonBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButtonBarView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				278AB97B2B0E34360067F186 /* Experience.rcproject */,
+				278AB97F2B0E6F730067F186 /* Pin.rcproject */,
 				27E003242B0DEF230015172F /* Bowling_Pin.usdz */,
 				27E003252B0DEF230015172F /* fruitmachine.usdz */,
 			);
@@ -86,7 +89,6 @@
 				27E0032A2B0DF82B0015172F /* Assets */,
 				AC6A7215286785E80024C937 /* AppDelegate.swift */,
 				27D074602B0B7EA10078F518 /* Coordinator.swift */,
-				AC6A7217286785E80024C937 /* ContentView.swift */,
 				AC6A7225286789EC0024C937 /* View */,
 				AC6A722928678BD00024C937 /* Model */,
 				AC6A721B286785EB0024C937 /* Assets.xcassets */,
@@ -97,6 +99,7 @@
 		AC6A7225286789EC0024C937 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AC6A7217286785E80024C937 /* GameView.swift */,
 				AC6A722B28678C220024C937 /* ARViewContainer.swift */,
 				AC6A722D28678C380024C937 /* CounterButtonBarView.swift */,
 			);
@@ -187,9 +190,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				27D074612B0B7EA10078F518 /* Coordinator.swift in Sources */,
-				AC6A7218286785E80024C937 /* ContentView.swift in Sources */,
+				AC6A7218286785E80024C937 /* GameView.swift in Sources */,
 				AC6A722C28678C220024C937 /* ARViewContainer.swift in Sources */,
 				27E003232B0DEEEE0015172F /* SelectedObject.swift in Sources */,
+				278AB9802B0E6F730067F186 /* Pin.rcproject in Sources */,
 				AC6A7216286785E80024C937 /* AppDelegate.swift in Sources */,
 				278AB97C2B0E34360067F186 /* Experience.rcproject in Sources */,
 				271C9B072B0A8B7800D025B1 /* JsonApi.swift in Sources */,
@@ -251,7 +255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -305,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -335,6 +339,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,6 +375,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

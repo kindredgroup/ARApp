@@ -17,50 +17,30 @@
                 -9.8,
                 0
               ],
-              "identifier" : "F9610871-0955-494F-A5C3-51D1A281BAB3",
+              "identifier" : "7E616D2E-B7B2-44EB-BAE0-CB517F961FCB",
               "material" : "concrete",
               "overrides" : {
                 "children" : {
-                  "4A213441-135C-450E-8EF8-1A4EAB267C1D" : null,
-                  "7F5F1ADC-E5E4-4EF5-A5B5-FC43B071FFA5" : null,
-                  "25F6105C-675E-40CB-A1E9-1617E5F9CE20" : null,
-                  "632E476F-1E55-4E30-9723-1C51DD2E8B89" : null,
-                  "A3B7B3CC-C24E-4229-904B-E18DB8B91F5D" : {
+                  "97DF8BE8-1525-4125-8E4F-994C357D8F38" : {
                     "overrides" : {
                       "arguments" : [
                         [
-                          "item",
+                          "material",
                           {
                             "typeName" : "String",
-                            "value" : "Turntable"
+                            "value" : "standard"
                           }
                         ],
                         [
-                          "style",
+                          "type",
                           {
                             "typeName" : "String",
-                            "value" : "Stylized"
+                            "value" : "capsule"
                           }
                         ]
                       ],
-                      "children" : {
-                        "item" : {
-                          "overrides" : {
-                            "factory" : null,
-                            "runtimeAttributes" : [
-                              [
-                                "RuntimeIdentifier",
-                                {
-                                  "typeName" : "UUID",
-                                  "value" : "29615FCE-2025-48E5-825A-791307462298"
-                                }
-                              ]
-                            ]
-                          }
-                        }
-                      },
                       "factory" : {
-                        "identifier" : "com.apple.rc.af.Turntable.a8096f0b-fc93-49f3-b5fd-9520b0f517a3",
+                        "identifier" : "com.apple.rc.af.CoreAssetFactories.PrimitiveShapeAssetFactory",
                         "version" : "1.0"
                       },
                       "runtimeAttributes" : [
@@ -68,21 +48,7 @@
                           "RuntimeIdentifier",
                           {
                             "typeName" : "UUID",
-                            "value" : "3CAAE06B-C937-4823-AE77-180A357135D1"
-                          }
-                        ],
-                        [
-                          "rigidBody-enabled",
-                          {
-                            "typeName" : "Bool",
-                            "value" : true
-                          }
-                        ],
-                        [
-                          "rigidBody-motionType",
-                          {
-                            "typeName" : "REMotionType",
-                            "value" : "dynamic"
+                            "value" : "0E4C4312-4686-4037-A292-91EC05637593"
                           }
                         ]
                       ]
@@ -102,14 +68,12 @@
                         1,
                         0,
                         0,
-                        0,
+                        0.1,
                         0,
                         1
                       ]
                     }
-                  },
-                  "AD5C8BFA-FCA0-4530-8797-62910B258D9A" : null,
-                  "B91C7CA3-4AB1-4253-9A84-07383168A8A8" : null
+                  }
                 },
                 "factory" : null,
                 "runtimeAttributes" : [
@@ -126,21 +90,21 @@
               "title" : "Box",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.99999994,
+                  0.9888125,
+                  1.3282854e-08,
+                  -0.1491638,
                   0,
+                  -0.07055334,
+                  0.8810666,
+                  -0.46770075,
                   0,
+                  0.13142322,
+                  0.47299233,
+                  0.8712097,
                   0,
-                  0,
-                  0.80754864,
-                  -0.5898011,
-                  0,
-                  0,
-                  0.5898011,
-                  0.80754864,
-                  0,
-                  0,
-                  1.1356671,
-                  1.5549419,
+                  0.048793446,
+                  0.77706677,
+                  1.3450352,
                   1
                 ],
                 "sceneTransform" : [
@@ -149,12 +113,12 @@
                   0,
                   0,
                   0,
-                  0.99999994,
+                  1,
                   0,
                   0,
                   0,
                   0,
-                  0.99999994,
+                  1,
                   0,
                   0,
                   0,

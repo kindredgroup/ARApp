@@ -15,9 +15,9 @@ struct ARViewContainer: UIViewRepresentable {
         c.collisionBeganObserver = a.scene.subscribe(
           to: CollisionEvents.Began.self
         ) { event in
-                print("collision started")
-                print(event.entityA.name)
-                print(event.entityB.name)
+                //print("collision started")
+                //print(event.entityA.name)
+                //print(event.entityB.name)
             if (event.entityA.name=="ball" && event.entityB.name=="pin") {
                 print("BOOOOOOOM!")
                 if let anchorEntity = event.entityA.anchor {
@@ -65,27 +65,31 @@ struct ARViewContainer: UIViewRepresentable {
             }
         }
         
-        var x = Float()
-        var z = Float()
-
         objects.forEach { c in
-            createPin(x:c.x,z:c.z)
+            createPin(x:c.x * 5,y:c.y,z:c.z)
         }
     }
     
-    func createPin(x:Float, z:Float){
-        if let e = try? Entity.loadModel(named: "Bowling_Pin") {
-            let size = e.visualBounds(relativeTo: e).extents
-            let boxShape = ShapeResource.generateBox(size: size)
-            e.collision = CollisionComponent(shapes: [boxShape])
-            let kinematics: PhysicsBodyComponent = .init(massProperties: .default,material: nil, mode: .dynamic)
-            e.components.set(kinematics)
-            e.transform.translation.x = x
-            e.transform.translation.z = z
-            e.transform.translation.y = e.transform.translation.y + 0.2
-            e.name = "pin"
-            e.setParent(floorAnchor)
-            print("Added pin")
+    func createPin(x:Float, y:Float, z:Float){
+        let anchorEntity = AnchorEntity(world: [x,y,z])
+        let mesh = MeshResource.generateSphere(radius: 0.2)
+        let material = SimpleMaterial(color: .red, isMetallic: true)
+        let shape = ShapeResource.generateSphere(radius: 0.2)
+        let spherePhysicsMaterial = PhysicsMaterialResource.generate(friction: 0.055, restitution: 0.85)
+        let sphere = ModelEntity(mesh: mesh, materials: [material], collisionShape:shape, mass: 0.5)
+        let kinematics: PhysicsBodyComponent = .init(massProperties: .default, material: spherePhysicsMaterial, mode: .static)
+        sphere.components.set(kinematics)
+        sphere.name="ball"
+        sphere.setParent(anchorEntity)
+        a.scene.addAnchor(anchorEntity)
+        print("Added sphere")
+        
+        if let b = try? Pin.loadBox() {
+            b.name = "pin"
+            b.setParent(anchorEntity)
+            a.scene.addAnchor(anchorEntity)
+            print("*******")
+            print(b.position)
         }
     }
     
