@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CounterButtonBarView: View {
+struct BarView: View {
     @State var selectedObject: SelectedObject
     
     var body: some View {
@@ -24,6 +24,19 @@ struct CounterButtonBarView: View {
                 print("Tap : \(selectedObject.name)")
             } label: {
                 Image(systemName: "square.and.arrow.down.fill")
+            }
+            
+            Button { // Increment Button
+                selectedObject.name = "load"
+                print("Tap : \(selectedObject.name)")
+            } label: {
+                Image(systemName: "square.and.arrow.up.circle.fill")
+            }
+            Button { // Increment Button
+                selectedObject.name = "loadpins"
+                print("Tap : \(selectedObject.name)")
+            } label: {
+                Image(systemName: "square.and.arrow.up.circle.fill")
             }
         }
         .padding(.bottom, 15)

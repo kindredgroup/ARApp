@@ -16,7 +16,7 @@ struct GameView: View {
             ARViewContainer(selectedObject: selectedObject)
             VStack {
                 Spacer()
-                CounterButtonBarView(selectedObject: selectedObject)
+                BarView(selectedObject: selectedObject)
             }
         }
         .edgesIgnoringSafeArea(.all)

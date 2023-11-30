@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		271C9B072B0A8B7800D025B1 /* JsonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C9B062B0A8B7800D025B1 /* JsonApi.swift */; };
 		271C9B092B0A8ECF00D025B1 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C9B082B0A8ECF00D025B1 /* Objects.swift */; };
+		272218D72B189D180002523D /* Object1.reality in Resources */ = {isa = PBXBuildFile; fileRef = 272218D62B189D180002523D /* Object1.reality */; };
 		278AB97C2B0E34360067F186 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 278AB97B2B0E34360067F186 /* Experience.rcproject */; };
 		278AB97E2B0E693B0067F186 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 278AB97D2B0E693B0067F186 /* data.json */; };
 		278AB9802B0E6F730067F186 /* Pin.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 278AB97F2B0E6F730067F186 /* Pin.rcproject */; };
@@ -21,12 +22,13 @@
 		AC6A7218286785E80024C937 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A7217286785E80024C937 /* GameView.swift */; };
 		AC6A721C286785EB0024C937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC6A721B286785EB0024C937 /* Assets.xcassets */; };
 		AC6A722C28678C220024C937 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A722B28678C220024C937 /* ARViewContainer.swift */; };
-		AC6A722E28678C380024C937 /* CounterButtonBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A722D28678C380024C937 /* CounterButtonBarView.swift */; };
+		AC6A722E28678C380024C937 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A722D28678C380024C937 /* BarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		271C9B062B0A8B7800D025B1 /* JsonApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonApi.swift; sourceTree = "<group>"; };
 		271C9B082B0A8ECF00D025B1 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
+		272218D62B189D180002523D /* Object1.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Object1.reality; sourceTree = "<group>"; };
 		278AB97B2B0E34360067F186 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		278AB97D2B0E693B0067F186 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		278AB97F2B0E6F730067F186 /* Pin.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Pin.rcproject; sourceTree = "<group>"; };
@@ -40,7 +42,7 @@
 		AC6A7217286785E80024C937 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AC6A721B286785EB0024C937 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC6A722B28678C220024C937 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
-		AC6A722D28678C380024C937 /* CounterButtonBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButtonBarView.swift; sourceTree = "<group>"; };
+		AC6A722D28678C380024C937 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		27E0032A2B0DF82B0015172F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				272218D62B189D180002523D /* Object1.reality */,
 				278AB97B2B0E34360067F186 /* Experience.rcproject */,
 				278AB97F2B0E6F730067F186 /* Pin.rcproject */,
 				27E003242B0DEF230015172F /* Bowling_Pin.usdz */,
@@ -101,7 +104,7 @@
 			children = (
 				AC6A7217286785E80024C937 /* GameView.swift */,
 				AC6A722B28678C220024C937 /* ARViewContainer.swift */,
-				AC6A722D28678C380024C937 /* CounterButtonBarView.swift */,
+				AC6A722D28678C380024C937 /* BarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				27E003292B0DF73B0015172F /* README.md in Resources */,
 				278AB97E2B0E693B0067F186 /* data.json in Resources */,
 				27E003262B0DEF230015172F /* Bowling_Pin.usdz in Resources */,
+				272218D72B189D180002523D /* Object1.reality in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +201,7 @@
 				AC6A7216286785E80024C937 /* AppDelegate.swift in Sources */,
 				278AB97C2B0E34360067F186 /* Experience.rcproject in Sources */,
 				271C9B072B0A8B7800D025B1 /* JsonApi.swift in Sources */,
-				AC6A722E28678C380024C937 /* CounterButtonBarView.swift in Sources */,
+				AC6A722E28678C380024C937 /* BarView.swift in Sources */,
 				271C9B092B0A8ECF00D025B1 /* Objects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
