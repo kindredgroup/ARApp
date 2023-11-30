@@ -46,7 +46,7 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
             print(objects)
         }
         
-        let url = URL(string:"https://github.com/kindredgroup/ARApp/raw/master/ARApp/Object1.reality")!
+        let url = URL(string:"https://github.com/kindredgroup/ARApp/raw/master/ARApp/Assets/Object1.reality")!
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         config.urlCache = nil
