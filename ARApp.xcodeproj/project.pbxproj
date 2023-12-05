@@ -10,13 +10,11 @@
 		271C9B072B0A8B7800D025B1 /* JsonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C9B062B0A8B7800D025B1 /* JsonApi.swift */; };
 		271C9B092B0A8ECF00D025B1 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C9B082B0A8ECF00D025B1 /* Objects.swift */; };
 		272218D72B189D180002523D /* Object1.reality in Resources */ = {isa = PBXBuildFile; fileRef = 272218D62B189D180002523D /* Object1.reality */; };
+		27715E202B1F6F1400BA01AE /* Object2.reality in Resources */ = {isa = PBXBuildFile; fileRef = 27715E1F2B1F6F1400BA01AE /* Object2.reality */; };
 		278AB97C2B0E34360067F186 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 278AB97B2B0E34360067F186 /* Experience.rcproject */; };
 		278AB97E2B0E693B0067F186 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 278AB97D2B0E693B0067F186 /* data.json */; };
-		278AB9802B0E6F730067F186 /* Pin.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 278AB97F2B0E6F730067F186 /* Pin.rcproject */; };
 		27D074612B0B7EA10078F518 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D074602B0B7EA10078F518 /* Coordinator.swift */; };
 		27E003232B0DEEEE0015172F /* SelectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E003222B0DEEEE0015172F /* SelectedObject.swift */; };
-		27E003262B0DEF230015172F /* Bowling_Pin.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27E003242B0DEF230015172F /* Bowling_Pin.usdz */; };
-		27E003272B0DEF230015172F /* fruitmachine.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 27E003252B0DEF230015172F /* fruitmachine.usdz */; };
 		27E003292B0DF73B0015172F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 27E003282B0DF73B0015172F /* README.md */; };
 		AC6A7216286785E80024C937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A7215286785E80024C937 /* AppDelegate.swift */; };
 		AC6A7218286785E80024C937 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A7217286785E80024C937 /* GameView.swift */; };
@@ -29,13 +27,11 @@
 		271C9B062B0A8B7800D025B1 /* JsonApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonApi.swift; sourceTree = "<group>"; };
 		271C9B082B0A8ECF00D025B1 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		272218D62B189D180002523D /* Object1.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Object1.reality; sourceTree = "<group>"; };
+		27715E1F2B1F6F1400BA01AE /* Object2.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Object2.reality; sourceTree = "<group>"; };
 		278AB97B2B0E34360067F186 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		278AB97D2B0E693B0067F186 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		278AB97F2B0E6F730067F186 /* Pin.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Pin.rcproject; sourceTree = "<group>"; };
 		27D074602B0B7EA10078F518 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		27E003222B0DEEEE0015172F /* SelectedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedObject.swift; sourceTree = "<group>"; };
-		27E003242B0DEF230015172F /* Bowling_Pin.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Bowling_Pin.usdz; sourceTree = "<group>"; };
-		27E003252B0DEF230015172F /* fruitmachine.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fruitmachine.usdz; sourceTree = "<group>"; };
 		27E003282B0DF73B0015172F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AC6A7212286785E80024C937 /* ARApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6A7215286785E80024C937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,11 +55,9 @@
 		27E0032A2B0DF82B0015172F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				27715E1F2B1F6F1400BA01AE /* Object2.reality */,
 				272218D62B189D180002523D /* Object1.reality */,
 				278AB97B2B0E34360067F186 /* Experience.rcproject */,
-				278AB97F2B0E6F730067F186 /* Pin.rcproject */,
-				27E003242B0DEF230015172F /* Bowling_Pin.usdz */,
-				27E003252B0DEF230015172F /* fruitmachine.usdz */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -177,11 +171,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27E003272B0DEF230015172F /* fruitmachine.usdz in Resources */,
 				AC6A721C286785EB0024C937 /* Assets.xcassets in Resources */,
 				27E003292B0DF73B0015172F /* README.md in Resources */,
 				278AB97E2B0E693B0067F186 /* data.json in Resources */,
-				27E003262B0DEF230015172F /* Bowling_Pin.usdz in Resources */,
+				27715E202B1F6F1400BA01AE /* Object2.reality in Resources */,
 				272218D72B189D180002523D /* Object1.reality in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +190,6 @@
 				AC6A7218286785E80024C937 /* GameView.swift in Sources */,
 				AC6A722C28678C220024C937 /* ARViewContainer.swift in Sources */,
 				27E003232B0DEEEE0015172F /* SelectedObject.swift in Sources */,
-				278AB9802B0E6F730067F186 /* Pin.rcproject in Sources */,
 				AC6A7216286785E80024C937 /* AppDelegate.swift in Sources */,
 				278AB97C2B0E34360067F186 /* Experience.rcproject in Sources */,
 				271C9B072B0A8B7800D025B1 /* JsonApi.swift in Sources */,
@@ -328,12 +320,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Native iOS Fastlane (42V6VGDX2A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Native iOS Fastlane (42V6VGDX2A)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = J8NNW3S38F;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 826XD4LA79;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -349,10 +342,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindredgroup.BasicApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindredgroup.artest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.kindredgroup.BasicApp";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.kindredgroup.artest";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.kindredgroup.artest";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -364,12 +357,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: Native iOS Fastlane (42V6VGDX2A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: Native iOS Fastlane (42V6VGDX2A)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = J8NNW3S38F;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 826XD4LA79;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -385,10 +379,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindredgroup.BasicApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindredgroup.artest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.kindredgroup.BasicApp";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.kindredgroup.artest";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.kindredgroup.artest";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

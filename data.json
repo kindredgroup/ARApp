@@ -1,23 +1,44 @@
 [
     {
         "id": 1,
-        "name": "pin",
+        "name": "Object",
         "x": 0,
         "y": 0,
         "z": 0
     },
     {
         "id": 2,
-        "name": "pin",
+        "name": "that",
         "x": 1,
         "y": 0,
         "z": 0
     },
     {
         "id": 3,
-        "name": "pin",
+        "name": "Wow!",
         "x": 2,
         "y": 0,
+        "z": 0
+    },
+    {
+        "id": 4,
+        "name": "Object4",
+        "x": 0,
+        "y": 1,
+        "z": 0
+    },
+    {
+        "id": 5,
+        "name": "Five",
+        "x": 1,
+        "y": 1,
+        "z": 0
+    },
+    {
+        "id": 6,
+        "name": "Six of the best",
+        "x": 2,
+        "y": 1,
         "z": 0
     }
 ]

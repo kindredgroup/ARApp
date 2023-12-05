@@ -11,6 +11,11 @@ import RealityKit
 import Combine
 
 class Coordinator: NSObject, URLSessionDownloadDelegate {
+    var view: ARView?
+    var collisionBeganObserver: Cancellable!
+    var selectedObject: String = "ball"
+    var objects = [Objects]()
+    
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("Download finished: \(location)")
         // Create The Filename
@@ -34,11 +39,6 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
         }
     }
     
-    var view: ARView?
-    var collisionBeganObserver: Cancellable!
-    var selectedObject: String = "ball"
-    var objects = [Objects]()
-    
     @MainActor func loadData(){
         // Load some json data
         JsonApi().getObjects { (objects) in
@@ -46,6 +46,7 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
             print(objects)
         }
         
+        // Download reality file
         let url = URL(string:"https://github.com/kindredgroup/ARApp/raw/master/ARApp/Assets/Object1.reality")!
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
@@ -60,6 +61,7 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
     func handleLongPress(_ recognizer: UITapGestureRecognizer? = nil) {
         // Check if there is a view to work with
         guard let view = self.view else { return }
+        print ("Long Press")
 
         // Obtain the location of a tap or touch gesture
         let tapLocation = recognizer!.location(in: view)
@@ -74,31 +76,43 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
             if let anchorEntity = entity.anchor {
                 // Remove the model from the scene
                 if (entity.name=="ball") {
-                    //anchorEntity.removeFromParent()
+                    anchorEntity.removeFromParent()
                 }
             }
         }
     }
 
     @MainActor @objc
-    func handleTap(_ recognizer: UITapGestureRecognizer? = nil) {
+    func handleTap(_ sender: UITapGestureRecognizer) {
+        let tapLocation = sender.location(in: view)
+        guard let view = self.view else { return }
         
-        if (selectedObject == "bullet") {
+        if (selectedObject == "ball") {
             launchSphere()
         }
-        if (selectedObject == "ball") {
-            dropItem()
+        if (selectedObject == "text") {
+            if let result = view.raycast(from: tapLocation, allowing: .estimatedPlane, alignment: .any).first {
+                let resultAnchor = AnchorEntity(world: result.worldTransform)
+                let textContent = "GRIFFIN INC!"
+                let text = createModelText(text:textContent)
+                var width = Float(textContent.count) as Float
+                width = (width + 1) * 0.12
+                let panel = createModelPlane(color:randomColor(), width:width, depth:0.25)
+                resultAnchor.addChild(panel)
+                resultAnchor.addChild(text)
+                view.scene.addAnchor(resultAnchor)
+            }
         }
-        if (selectedObject == "load") {
-            loadData()
+        if (selectedObject == "other") {
+            if let result = view.raycast(from: tapLocation, allowing: .estimatedPlane, alignment: .any).first {
+                setupList(transform: result.worldTransform)
+            }
         }
-        if (selectedObject == "loadpins") {
-            setupPins()
+        if (selectedObject == "setuppins") {
+            if let result = view.raycast(from: tapLocation, allowing: .estimatedPlane, alignment: .any).first {
+                setupPins(transform: result.worldTransform)
+            }
         }
-        guard let view = self.view else { return }
-
-        // Obtain the location of a tap or touch gesture
-        let tapLocation = recognizer!.location(in: view)
 
         // Checking if there's an entity at the tapped location within the view
         if let entity = view.entity(at: tapLocation) as? ModelEntity {
@@ -107,53 +121,62 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
         }
     }
     
+    @MainActor func setupList(transform: simd_float4x4){
+        clear()
+        self.objects.forEach { c in
+            createText(textContent:c.name, transform: transform, x:c.x, y:c.y, z:c.z)
+        }
+    }
     
-    @MainActor func setupPins(){
+    func clear(){
         guard let view = self.view else { return }
-        
         print("Clearing Pins")
         let query = EntityQuery()
         // Ask the scene to perform the query and iterate over the returned
         view.scene.performQuery(query).forEach { entity in
-            if (entity.name=="pin" || entity.name=="ball" || entity.name=="box") {
+            if (entity.name=="panel" || entity.name=="text" || entity.name=="pin" || entity.name=="ball" || entity.name=="box") {
                 entity.removeFromParent()
             }
         }
-        
-        // ** TODO bug where location is not set properly
+    }
+    
+    @MainActor func setupPins(transform: simd_float4x4){
+        guard let view = self.view else { return }
+        clear()
         self.objects.forEach { c in
-            createPin(x:c.x,y:c.y,z:c.z)
+            createPin(transform: transform, x:c.x, y:c.y, z:c.z)
         }
     }
     
-    @MainActor func createPin(x:Float, y:Float, z:Float){
+    @MainActor func createText(textContent:String, transform: simd_float4x4,x:Float, y:Float, z:Float){
+        print ("Create Text")
+        guard let view = self.view else { return }
+
+        let resultAnchor = AnchorEntity(world: transform)
+        let text = createModelText(text: textContent)
+        var width = Float(textContent.count) as Float
+        width = (width + 1) * 0.12
+        let panel = createModelPlane(color:randomColor(), width:width, depth:0.25)
+        resultAnchor.addChild(panel)
+        resultAnchor.addChild(text)
+        panel.transform.translation += SIMD3(x: x, y: y, z: z)
+        text.transform.translation += SIMD3(x: x, y: y, z: z)
+        view.scene.addAnchor(resultAnchor)
+    }
+    
+    @MainActor func createPin(transform: simd_float4x4,x:Float, y:Float, z:Float){
         print ("Create Pin")
         guard let view = self.view else { return }
         
-        let anchorEntity = AnchorEntity(world: [0,0,0])
-        let cameraTranslation = view.cameraTransform.translation
-        let cameraRotation = view.cameraTransform.rotation
-        let cameraForwardVector: SIMD3<Float> = view.cameraTransform.matrix.forward
-        let direction = cameraForwardVector * 2
- 
-        /*
-        if let e = try? Entity.load(named: "Object1.reality") {
-            e.name = "pin"
-            e.setParent(anchorEntity)
-            e.transform.translation += direction
-            e.transform.translation += SIMD3(x: x, y: y, z: z)
-        }
-        */
-        let e = createModel()
+        let anchorEntity = AnchorEntity(world: transform)
+        let e = createModel3()
         e.name = "pin"
         e.setParent(anchorEntity)
-        e.transform.translation += direction
         e.transform.translation += SIMD3(x: x, y: y, z: z)
-        
         view.scene.addAnchor(anchorEntity)
-
     }
     
+    // create model from reality downloaded reality file
     func createModel() -> Entity {
         var e:Entity = Entity()
         let url = getDocumentsDirectory().appendingPathComponent("ExperienceDownload.reality")
@@ -167,6 +190,57 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
         }
 
         e.name = "object1"
+        return e
+    }
+    
+    // create model from Experience.rcproject file
+    @MainActor func createModel2() -> Entity {
+        var e:Entity = Entity()
+        if let b = try? Experience.loadPicture() {
+            b.name = "picture"
+            e = b
+        }
+        return e
+    }
+    
+    // create model from local reality file
+    func createModel3() -> Entity {
+        var e:Entity = Entity()
+        if let x = try? Entity.load(named: "Object2.reality") {
+            e = x
+        }
+        e.name = "picture"
+        return e
+    }
+    
+    // create panel from plane
+    func createModelPlane(color:UIColor, width:Float, depth:Float) -> Entity {
+        let mesh = MeshResource.generatePlane(width: width, depth: depth)
+        let material = SimpleMaterial(color: color, isMetallic: true)
+        let shape = ShapeResource.generateSphere(radius: 0.1)
+        let e = ModelEntity(mesh: mesh, materials: [material], collisionShape:shape, mass: 0.5)
+        let p = PhysicsMaterialResource.generate(friction: 0.055, restitution: 0.85)
+        let kinematics: PhysicsBodyComponent = .init(massProperties: .default, material: p, mode: .static)
+        e.components.set(kinematics)
+        e.name = "panel"
+        return e
+    }
+    
+    func createModelText(text:String) -> Entity {
+        let lineHeight: CGFloat = 0.2
+        let font = MeshResource.Font.systemFont(ofSize: lineHeight)
+        let textMesh = MeshResource.generateText(text, extrusionDepth: Float(lineHeight * 0.1), font: font, alignment:.center)
+        let textMaterial = SimpleMaterial(color: .white, isMetallic: true)
+        let e = ModelEntity(mesh: textMesh, materials: [textMaterial])
+        let radians = -90.0 * Float.pi / 180.0
+        e.transform.rotation *= simd_quatf(angle: radians, axis: SIMD3<Float>(1,0,0))
+        let p = PhysicsMaterialResource.generate(friction: 0.055, restitution: 0.85)
+        let kinematics: PhysicsBodyComponent = .init(massProperties: .default, material: p, mode: .static)
+        e.components.set(kinematics)
+        e.name="text"
+        // ** TODO work length and move
+        let width = (e.model?.mesh.bounds.max.x)! - (e.model?.mesh.bounds.min.x)!
+        e.transform.translation = [width / 2 * -1, 0, 0.1]
         return e
     }
 
@@ -193,16 +267,6 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
         sphere.addForce(direction, relativeTo: nil)
         print("Added sphere")
     }
-    
-    @MainActor func dropItem(){
-        guard let view = self.view else { return }
-        print("Drop Item")
-        // Load the "Box" scene from the "Experience" Reality File
-        if let b = try? Experience.loadBox() {
-            b.name = "box"
-            view.scene.anchors.append(b)
-        }
-    }
 }
 
 extension float4x4 {
@@ -211,10 +275,15 @@ extension float4x4 {
     }
 }
 
-func getDocumentsDirectory() -> URL {
+func randomColor() -> UIColor {
+    let red = CGFloat.random(in: 0...1)
+    let green = CGFloat.random(in: 0...1)
+    let blue = CGFloat.random(in: 0...1)
+    return UIColor(red: red, green: green, blue: blue, alpha: 1)
+}
 
+func getDocumentsDirectory() -> URL {
 let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
 let documentsDirectory = paths[0]
 return documentsDirectory
-
 }

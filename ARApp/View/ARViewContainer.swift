@@ -9,6 +9,7 @@ struct ARViewContainer: UIViewRepresentable {
 
     func makeCoordinator() -> Coordinator {
         let c: Coordinator = Coordinator()
+        c.loadData()
         c.collisionBeganObserver = a.scene.subscribe(
           to: CollisionEvents.Began.self
         ) { event in
@@ -37,7 +38,7 @@ struct ARViewContainer: UIViewRepresentable {
             .physics,
             .receivesLighting
         ]
-        a.debugOptions.insert(.showSceneUnderstanding)
+        //a.debugOptions.insert(.showSceneUnderstanding)
         a.renderOptions = [.disablePersonOcclusion, .disableDepthOfField, .disableMotionBlur]
         
         createView(arView:a)

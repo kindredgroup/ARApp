@@ -12,31 +12,31 @@ struct BarView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 50) {
-            Button { // Increment Button
-                selectedObject.name = "bullet"
-                print("Tap : \(selectedObject.name)")
-            } label: {
-                Image(systemName: "square.and.arrow.up.circle.fill")
-            }
-            
-            Button { // Increment Button
+            Button {
                 selectedObject.name = "ball"
                 print("Tap : \(selectedObject.name)")
             } label: {
-                Image(systemName: "square.and.arrow.down.fill")
+                Image(systemName: "figure.archery")
             }
             
-            Button { // Increment Button
-                selectedObject.name = "load"
+            Button {
+                selectedObject.name = "text"
                 print("Tap : \(selectedObject.name)")
             } label: {
-                Image(systemName: "square.and.arrow.up.circle.fill")
+                Image(systemName: "photo.artframe")
             }
-            Button { // Increment Button
-                selectedObject.name = "loadpins"
+            
+            Button {
+                selectedObject.name = "other"
                 print("Tap : \(selectedObject.name)")
             } label: {
-                Image(systemName: "square.and.arrow.up.circle.fill")
+                Image(systemName: "folder.badge.plus")
+            }
+            Button {
+                selectedObject.name = "setuppins"
+                print("Tap : \(selectedObject.name)")
+            } label: {
+                Image(systemName: "square.grid.3x1.folder.fill.badge.plus")
             }
         }
         .padding(.bottom, 15)
@@ -45,5 +45,11 @@ struct BarView: View {
         .frame(width: UIScreen.main.bounds.width, height: 80, alignment: .center)
         .background(Color.black)
         .opacity(0.87)
+    }
+}
+
+struct PreviewBarView: PreviewProvider {
+    static var previews: some View {
+        BarView(selectedObject: SelectedObject())
     }
 }

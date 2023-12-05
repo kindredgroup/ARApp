@@ -22,3 +22,9 @@ struct GameView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
+
+struct PreviewGameView: PreviewProvider {
+    static var previews: some View {
+        GameView()
+    }
+}
