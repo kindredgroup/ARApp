@@ -1,7 +1,12 @@
 [
   {
-    "displayName" : "fruitmachine.usdz",
     "libraryIdentifier" : "6eedf65843c6fabbd6b7d6181eacc0c1",
-    "format" : "model"
+    "format" : "model",
+    "displayName" : "fruitmachine.usdz"
+  },
+  {
+    "libraryIdentifier" : "1756bf1942c0e6ab7e6123dbe1de1fe0",
+    "format" : "image",
+    "displayName" : "Screenshot 2023-09-05 at 08.45.55.png"
   }
 ]

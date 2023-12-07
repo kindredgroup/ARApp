@@ -11,33 +11,54 @@ struct BarView: View {
     @State var selectedObject: SelectedObject
     
     var body: some View {
-        HStack(alignment: .center, spacing: 50) {
+        HStack(alignment: .center, spacing: 30) {
             Button {
                 selectedObject.name = "ball"
                 print("Tap : \(selectedObject.name)")
             } label: {
                 Image(systemName: "figure.archery")
             }
+            .background(selectedObject.name=="ball" ? Color.red : Color.black)
             
             Button {
                 selectedObject.name = "text"
                 print("Tap : \(selectedObject.name)")
             } label: {
-                Image(systemName: "photo.artframe")
+                Image(systemName: "doc.text")
             }
+            .background(selectedObject.name=="text" ? Color.red : Color.black)
             
             Button {
                 selectedObject.name = "other"
                 print("Tap : \(selectedObject.name)")
             } label: {
-                Image(systemName: "folder.badge.plus")
+                Image(systemName: "note.text")
             }
+            .background(selectedObject.name=="other" ? Color.red : Color.black)
+            
             Button {
                 selectedObject.name = "setuppins"
                 print("Tap : \(selectedObject.name)")
             } label: {
-                Image(systemName: "square.grid.3x1.folder.fill.badge.plus")
+                Image(systemName: "photo.artframe")
             }
+            .background(selectedObject.name=="setuppins" ? Color.red : Color.black)
+            
+            Button {
+                selectedObject.name = "scribble"
+                print("Tap : \(selectedObject.name)")
+            } label: {
+                Image(systemName: "scribble")
+            }
+            .background(selectedObject.name=="scribble" ? Color.red : Color.black)
+            
+            Button {
+                selectedObject.name = "clear"
+                print("Tap : \(selectedObject.name)")
+            } label: {
+                Image(systemName: "clear")
+            }
+            .background(selectedObject.name=="clear" ? Color.red : Color.black)
         }
         .padding(.bottom, 15)
         .font(.system(size: 32))

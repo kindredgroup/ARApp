@@ -10,6 +10,8 @@
 		271C9B072B0A8B7800D025B1 /* JsonApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C9B062B0A8B7800D025B1 /* JsonApi.swift */; };
 		271C9B092B0A8ECF00D025B1 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C9B082B0A8ECF00D025B1 /* Objects.swift */; };
 		272218D72B189D180002523D /* Object1.reality in Resources */ = {isa = PBXBuildFile; fileRef = 272218D62B189D180002523D /* Object1.reality */; };
+		2730AF5B2B1F7F3D0023705D /* Object3.reality in Resources */ = {isa = PBXBuildFile; fileRef = 2730AF5A2B1F7F3D0023705D /* Object3.reality */; };
+		2730AF5D2B1F84350023705D /* NewButtonBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2730AF5C2B1F84350023705D /* NewButtonBar.swift */; };
 		27715E202B1F6F1400BA01AE /* Object2.reality in Resources */ = {isa = PBXBuildFile; fileRef = 27715E1F2B1F6F1400BA01AE /* Object2.reality */; };
 		278AB97C2B0E34360067F186 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 278AB97B2B0E34360067F186 /* Experience.rcproject */; };
 		278AB97E2B0E693B0067F186 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 278AB97D2B0E693B0067F186 /* data.json */; };
@@ -27,6 +29,8 @@
 		271C9B062B0A8B7800D025B1 /* JsonApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonApi.swift; sourceTree = "<group>"; };
 		271C9B082B0A8ECF00D025B1 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		272218D62B189D180002523D /* Object1.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Object1.reality; sourceTree = "<group>"; };
+		2730AF5A2B1F7F3D0023705D /* Object3.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Object3.reality; sourceTree = "<group>"; };
+		2730AF5C2B1F84350023705D /* NewButtonBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewButtonBar.swift; sourceTree = "<group>"; };
 		27715E1F2B1F6F1400BA01AE /* Object2.reality */ = {isa = PBXFileReference; lastKnownFileType = file; path = Object2.reality; sourceTree = "<group>"; };
 		278AB97B2B0E34360067F186 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		278AB97D2B0E693B0067F186 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 		27E0032A2B0DF82B0015172F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2730AF5A2B1F7F3D0023705D /* Object3.reality */,
 				27715E1F2B1F6F1400BA01AE /* Object2.reality */,
 				272218D62B189D180002523D /* Object1.reality */,
 				278AB97B2B0E34360067F186 /* Experience.rcproject */,
@@ -99,6 +104,7 @@
 				AC6A7217286785E80024C937 /* GameView.swift */,
 				AC6A722B28678C220024C937 /* ARViewContainer.swift */,
 				AC6A722D28678C380024C937 /* BarView.swift */,
+				2730AF5C2B1F84350023705D /* NewButtonBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +182,7 @@
 				278AB97E2B0E693B0067F186 /* data.json in Resources */,
 				27715E202B1F6F1400BA01AE /* Object2.reality in Resources */,
 				272218D72B189D180002523D /* Object1.reality in Resources */,
+				2730AF5B2B1F7F3D0023705D /* Object3.reality in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +199,7 @@
 				27E003232B0DEEEE0015172F /* SelectedObject.swift in Sources */,
 				AC6A7216286785E80024C937 /* AppDelegate.swift in Sources */,
 				278AB97C2B0E34360067F186 /* Experience.rcproject in Sources */,
+				2730AF5D2B1F84350023705D /* NewButtonBar.swift in Sources */,
 				271C9B072B0A8B7800D025B1 /* JsonApi.swift in Sources */,
 				AC6A722E28678C380024C937 /* BarView.swift in Sources */,
 				271C9B092B0A8ECF00D025B1 /* Objects.swift in Sources */,

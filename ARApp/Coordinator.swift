@@ -15,6 +15,7 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
     var collisionBeganObserver: Cancellable!
     var selectedObject: String = "ball"
     var objects = [Objects]()
+    var objects2 = [Objects]()
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("Download finished: \(location)")
@@ -40,11 +41,111 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
     }
     
     @MainActor func loadData(){
-        // Load some json data
+        // Load some json data from URL
+        /*
         JsonApi().getObjects { (objects) in
             self.objects = objects
             print(objects)
         }
+        */
+        
+        let json = """
+        [
+            {
+                "id": 1,
+                "name": "Object",
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            {
+                "id": 2,
+                "name": "that",
+                "x": 0.3,
+                "y": 0,
+                "z": 0
+            },
+            {
+                "id": 3,
+                "name": "Wow!",
+                "x": 0.6,
+                "y": 0,
+                "z": 0
+            },
+            {
+                "id": 4,
+                "name": "Object4",
+                "x": 0,
+                "y": 0,
+                "z": 0.3
+            },
+            {
+                "id": 5,
+                "name": "Five",
+                "x": 0.3,
+                "y": 0,
+                "z": 0.3
+            },
+            {
+                "id": 6,
+                "name": "Six of the best",
+                "x": 0.6,
+                "y": 0,
+                "z": 0.3
+            }
+        ]
+        """
+        
+        let json2 = """
+        [
+            {
+                "id": 1,
+                "name": "Object",
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            {
+                "id": 2,
+                "name": "that",
+                "x": 0,
+                "y": 0,
+                "z": 0.3
+            }
+        ]
+        """
+
+        let data = json.data(using: .utf8)!
+        do {
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,Any>]
+            {
+               print(jsonArray) // use the json here
+            } else {
+                print("bad json")
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        let objects = try! JSONDecoder().decode([Objects].self, from: data)
+        self.objects = objects
+        print(self.objects)
+        
+        let data2 = json2.data(using: .utf8)!
+        do {
+            if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? [Dictionary<String,Any>]
+            {
+               print(jsonArray) // use the json here
+            } else {
+                print("bad json")
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        let objects2 = try! JSONDecoder().decode([Objects].self, from: data2)
+        self.objects2 = objects2
+        print(self.objects2)
         
         // Download reality file
         let url = URL(string:"https://github.com/kindredgroup/ARApp/raw/master/ARApp/Assets/Object1.reality")!
@@ -90,6 +191,14 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
         if (selectedObject == "ball") {
             launchSphere()
         }
+        if (selectedObject == "scribble") {
+            if let result = view.raycast(from: tapLocation, allowing: .estimatedPlane, alignment: .any).first {
+                setupBlocks(transform: result.worldTransform)
+            }
+        }
+        if (selectedObject == "clear") {
+            clear()
+        }
         if (selectedObject == "text") {
             if let result = view.raycast(from: tapLocation, allowing: .estimatedPlane, alignment: .any).first {
                 let resultAnchor = AnchorEntity(world: result.worldTransform)
@@ -122,8 +231,9 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
     }
     
     @MainActor func setupList(transform: simd_float4x4){
-        clear()
-        self.objects.forEach { c in
+        print("Setup List")
+        self.objects2.forEach { c in
+            print("CREATE TEXT")
             createText(textContent:c.name, transform: transform, x:c.x, y:c.y, z:c.z)
         }
     }
@@ -140,9 +250,13 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
         }
     }
     
+    @MainActor func setupBlocks(transform: simd_float4x4){
+        print ("Setup Blocks")
+        createModel(transform: transform, x:0, y:0, z:0)
+    }
+    
     @MainActor func setupPins(transform: simd_float4x4){
-        guard let view = self.view else { return }
-        clear()
+        print ("Setup Pins")
         self.objects.forEach { c in
             createPin(transform: transform, x:c.x, y:c.y, z:c.z)
         }
@@ -162,6 +276,18 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
         panel.transform.translation += SIMD3(x: x, y: y, z: z)
         text.transform.translation += SIMD3(x: x, y: y, z: z)
         view.scene.addAnchor(resultAnchor)
+    }
+    
+    @MainActor func createModel(transform: simd_float4x4,x:Float, y:Float, z:Float){
+        print ("Create Model at Location")
+        guard let view = self.view else { return }
+        
+        let anchorEntity = AnchorEntity(world: transform)
+        let e = createModel4()
+        e.name = "pin"
+        e.setParent(anchorEntity)
+        e.transform.translation += SIMD3(x: x, y: y, z: z)
+        view.scene.addAnchor(anchorEntity)
     }
     
     @MainActor func createPin(transform: simd_float4x4,x:Float, y:Float, z:Float){
@@ -203,10 +329,19 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
         return e
     }
     
-    // create model from local reality file
+    // c4eate model from local reality file
     func createModel3() -> Entity {
         var e:Entity = Entity()
         if let x = try? Entity.load(named: "Object2.reality") {
+            e = x
+        }
+        e.name = "picture"
+        return e
+    }
+    
+    func createModel4() -> Entity {
+        var e:Entity = Entity()
+        if let x = try? Entity.load(named: "Object3.reality") {
             e = x
         }
         e.name = "picture"
@@ -262,8 +397,8 @@ class Coordinator: NSObject, URLSessionDownloadDelegate {
         sphere.name="ball"
         sphere.setParent(anchorEntity)
         view.scene.addAnchor(anchorEntity)
-        let cameraForwardVector: SIMD3<Float> = view.cameraTransform.matrix.forward
-        let direction = cameraForwardVector * 200
+        let fv: SIMD3<Float> = sphere.transform.matrix.forward
+        let direction = fv * 100
         sphere.addForce(direction, relativeTo: nil)
         print("Added sphere")
     }

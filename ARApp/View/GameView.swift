@@ -17,6 +17,7 @@ struct GameView: View {
             VStack {
                 Spacer()
                 BarView(selectedObject: selectedObject)
+                NewButtonBar("Test")
             }
         }
         .edgesIgnoringSafeArea(.all)
